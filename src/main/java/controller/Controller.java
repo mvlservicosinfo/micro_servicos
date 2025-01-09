@@ -1,19 +1,21 @@
 package controller;
 
+
 import org.springframework.web.bind.annotation.RestController;
 import servico.Servico;
 
-@org.springframework.stereotype.Controller
-@RestController
+import java.math.BigDecimal;
+
+@RestController(value="/controller")
 public class Controller {
 
-    Servico servico;
-
-    public Servico getServico() {
-        return servico;
+    public void maiorValor(BigDecimal valor, BigDecimal valor2) {
+        Servico servico = new Servico();
+        servico.max(valor, valor2);
     }
 
-    public void setServico(Servico servico) {
-        this.servico = servico;
+    public void menorValor(BigDecimal valor, BigDecimal valor2) {
+        Servico servico = new Servico();
+        servico.min(valor, valor2);
     }
 }
